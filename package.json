@@ -1,0 +1,25 @@
+{
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "friend finder",
+  "main": "home.html",
+  "dependencies": {
+    "express": "^4.16.4",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hgmallar/FriendFinder.git"
+  },
+  "author": "Hilary Mallar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hgmallar/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/hgmallar/FriendFinder#readme"
+}
