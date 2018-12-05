@@ -17,29 +17,28 @@
 <body>
 
     <div class="container">
+        <!--Survey-->
         <h1>Survey Questions</h1>
         <hr>
-
-
         <form role="form">
             <h3>About You</h3>
+            <!--Name-->
             <div class="form-group">
                 <label for="name">Name (Required)</label>
                 <input type="text" class="form-control" id="name">
             </div>
-
+            <!--Photo-->
             <div class="form-group">
                 <label for="photo">Link to Photo Image (Required)</label>
                 <input type="text" class="form-control" id="photo">
             </div>
             <hr>
-
-
+            <!--Questions 1 through 10-->
             <div class="form-group">
                 <h3>Question 1</h3>
                 <label for="question1">I prefer to spend as much time outdoors as possible.</label>
                 <select class="form-control" id="question1">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -47,12 +46,11 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <h3>Question 2</h3>
                 <label for="question2">I have no problem separating from my phone.</label>
                 <select class="form-control" id="question2">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -60,12 +58,11 @@
                     <option value="5">5 (Strongly Agree)</option>
                 </select>
             </div>
-
             <div class="form-group">
                 <h3>Question 3</h3>
                 <label for="question3">I do not enjoy gossip.</label>
                 <select class="form-control" id="question3">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -77,7 +74,7 @@
                 <h3>Question 4</h3>
                 <label for="question4">I like to travel.</label>
                 <select class="form-control" id="question4">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -89,7 +86,7 @@
                 <h3>Question 5</h3>
                 <label for="question5">I like to try new things.</label>
                 <select class="form-control" id="question5">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -101,7 +98,7 @@
                 <h3>Question 6</h3>
                 <label for="question6">I prefer small groups to large crowds.</label>
                 <select class="form-control" id="question6">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -113,7 +110,7 @@
                 <h3>Question 7</h3>
                 <label for="question7">I am adventurous.</label>
                 <select class="form-control" id="question7">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -125,7 +122,7 @@
                 <h3>Question 8</h3>
                 <label for="question8">I like to exercise.</label>
                 <select class="form-control" id="question8">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -137,7 +134,7 @@
                 <h3>Question 9</h3>
                 <label for="question9">I go out of my way to help others sometimes.</label>
                 <select class="form-control" id="question9">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -149,7 +146,7 @@
                 <h3>Question 10</h3>
                 <label for="question10">I try to understand other people's perspectives.</label>
                 <select class="form-control" id="question10">
-                    <option value="" selected disabled>Select an Option</option>
+                    <option value="" selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -159,41 +156,93 @@
             </div>
         </form>
 
+        <!--Submit Button-->
         <button type="submit" class="btn btn-lg btn-primary btn-block" id="submit">Submit</button>
-
         <hr>
 
+        <!--Links-->
         <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/hgmallar/FriendFinder">Github Repo</a></p>
 
     </div>
 
-   <script type="text/javascript">
+    <!--Modal to display best matched friend-->
+    <div id="results-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content d-inline-block">
+                <div class="modal-header">
+                    <h2 class="modal-title font-weight-bold">Best Match</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!--display name-->
+                    <h2 id="match-name"></h2>
+                    <!--display image-->
+                    <img id="match-img" class="img-fluid" src="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script type="text/javascript">
+        //Submit button is clicked
         $("#submit").on("click", function (event) {
-            console.log("HERE");
             event.preventDefault();
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photo").val().trim(),
-                scores: [parseInt($("#question1").val()), parseInt($("#question2").val()), parseInt($("#question3").val()), parseInt($("#question4").val()), parseInt($("#question5").val()), parseInt($("#question6").val()), parseInt($("#question7").val()), parseInt($("#question8").val()), parseInt($("#question9").val()), parseInt($("#question10").val())]
-            };
 
-            $.post("/api/friends", newFriend)
-                .then(function (data) {
-
-                    $("#name").val("");
-                    $("#photo").val("");
-                    $("#question1").val("Select an Option");
-                    $("#question2").val("Select an Option");
-                    $("#question3").val("Select an Option");
-                    $("#question4").val("Select an Option");
-                    $("#question5").val("Select an Option");
-                    $("#question6").val("Select an Option");
-                    $("#question7").val("Select an Option");
-                    $("#question8").val("Select an Option");
-                    $("#question9").val("Select an Option");
-                    $("#question10").val("Select an Option");
+            //Form validation, check that each question is answered and each input is filled out
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function () {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                    }
                 });
+                return isValid;
+            }
+
+            // If all required fields are filled out
+            if (validateForm()) {
+                //Create a new friend object with the input values
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [parseInt($("#question1").val()), parseInt($("#question2").val()), parseInt($("#question3").val()), parseInt($("#question4").val()), parseInt($("#question5").val()), parseInt($("#question6").val()), parseInt($("#question7").val()), parseInt($("#question8").val()), parseInt($("#question9").val()), parseInt($("#question10").val())]
+                };
+
+                //Post request with the new friend
+                $.post("/api/friends", newFriend)
+                    .then(function (data) {
+                        //Reset the form
+                        $("#name").val("");
+                        $("#photo").val("");
+                        $("#question1").val("");
+                        $("#question2").val("");
+                        $("#question3").val("");
+                        $("#question4").val("");
+                        $("#question5").val("");
+                        $("#question6").val("");
+                        $("#question7").val("");
+                        $("#question8").val("");
+                        $("#question9").val("");
+                        $("#question10").val("");
+                        
+                        //If a match is returned, display the match and the picture in the modal
+                        if (data) {
+                            $("#match-name").text(data.name);
+                            $("#match-img").attr("src", data.photo);
+                            $("#results-modal").modal("toggle");
+                        }
+                        else { }
+                    });
+            }
+            else {
+                //All fields are not filled out
+                alert("Please fill out all fields before submitting!");
+            }
         });   
     </script>
 </body>
